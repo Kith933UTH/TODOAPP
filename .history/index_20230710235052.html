@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO . KITH</title>
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- title -->
+      <h1 class="title">todos</h1>
+
+      <!-- main -->
+      <div class="todo-app no-todo">
+        <!-- header -->
+        <header class="header">
+          <input type="checkbox" id="toggle-all" class="toggle-all" />
+          <label for="toggle-all"></label>
+          <input
+            type="text"
+            class="get-todo"
+            placeholder="What needs to be done?"
+          />
+        </header>
+        <!-- body -->
+        <section class="main">
+          <ul class="todo-list">
+            <li class="todo-item">
+              <div class="todo-item-view">
+                <input
+                  type="checkbox"
+                  id="toggle-completed"
+                  class="toggle-completed"
+                />
+                <div class="todo-item-wrap-content">
+                  <span class="todo-item-content">Học Javascript</span>
+                  <span class="todo-item-description">Từ tháng 6 đến nay.</span>
+                </div>
+                <button class="destroy">+</button>
+              </div>
+              <input type="text" class="editing" placeholder="Change me" />
+            </li>
+            <li class="todo-item">
+              <div class="todo-item-view">
+                <input
+                  type="checkbox"
+                  id="toggle-completed"
+                  class="toggle-completed"
+                />
+                <div class="todo-item-wrap-content">
+                  <span class="todo-item-content">Học Javascript</span>
+                  <span class="todo-item-description">Từ tháng 6 đến nay.</span>
+                </div>
+                <button class="destroy">+</button>
+              </div>
+              <input type="text" class="editing" placeholder="Change me" />
+            </li>
+            <li class="todo-item">
+              <div class="todo-item-view">
+                <input
+                  type="checkbox"
+                  id="toggle-completed"
+                  class="toggle-completed"
+                />
+                <div class="todo-item-wrap-content">
+                  <span class="todo-item-content">Học Javascript</span>
+                  <span class="todo-item-description">Từ tháng 6 đến nay.</span>
+                </div>
+                <button class="destroy">+</button>
+              </div>
+              <input type="text" class="editing" placeholder="Change me" />
+            </li>
+            <li class="todo-item">
+              <div class="todo-item-view">
+                <input
+                  type="checkbox"
+                  id="toggle-completed"
+                  class="toggle-completed"
+                />
+                <div class="todo-item-wrap-content">
+                  <span class="todo-item-content">Học Javascript</span>
+                  <span class="todo-item-description">Từ tháng 6 đến nay.</span>
+                </div>
+                <button class="destroy">+</button>
+              </div>
+              <input type="text" class="editing" placeholder="Change me" />
+            </li>
+            <li class="todo-item">
+              <div class="todo-item-view">
+                <input
+                  type="checkbox"
+                  id="toggle-completed"
+                  class="toggle-completed"
+                />
+                <div class="todo-item-wrap-content">
+                  <span class="todo-item-content">Học Javascript</span>
+                  <span class="todo-item-description">Từ tháng 6 đến nay.</span>
+                </div>
+                <button class="destroy">+</button>
+              </div>
+              <input type="text" class="editing" placeholder="Change me" />
+            </li>
+            <li class="todo-item">
+              <div class="todo-item-view">
+                <input
+                  type="checkbox"
+                  id="toggle-completed"
+                  class="toggle-completed"
+                />
+                <div class="todo-item-wrap-content">
+                  <span class="todo-item-content">Học Javascript</span>
+                  <span class="todo-item-description">Từ tháng 6 đến nay.</span>
+                </div>
+                <button class="destroy">+</button>
+              </div>
+              <input type="text" class="editing" placeholder="Change me" />
+            </li>
+            <li class="todo-item">
+              <div class="todo-item-view">
+                <input
+                  type="checkbox"
+                  id="toggle-completed"
+                  class="toggle-completed"
+                />
+                <div class="todo-item-wrap-content">
+                  <span class="todo-item-content">Học Javascript</span>
+                  <span class="todo-item-description">Từ tháng 6 đến nay.</span>
+                </div>
+                <button class="destroy">+</button>
+              </div>
+              <input type="text" class="editing" placeholder="Change me" />
+            </li>
+            <li class="todo-item">
+              <div class="todo-item-view">
+                <input
+                  type="checkbox"
+                  id="toggle-completed"
+                  class="toggle-completed"
+                />
+                <div class="todo-item-wrap-content">
+                  <span class="todo-item-content">Học Javascript</span>
+                  <span class="todo-item-description">Từ tháng 6 đến nay.</span>
+                </div>
+                <button class="destroy">+</button>
+              </div>
+              <input type="text" class="editing" placeholder="Change me" />
+            </li>
+          </ul>
+        </section>
+        <!-- footer -->
+        <footer class="footer">
+          <div class="wrap-footer">
+            <div class="count-incomplete"><span>10</span> item left</div>
+            <div class="wrap-filters">
+              <ul class="filters">
+                <li>
+                  <a class="filter-item selected">All</a>
+                </li>
+                <li>
+                  <a class="filter-item">Active</a>
+                </li>
+                <li>
+                  <a class="filter-item">Completed</a>
+                </li>
+              </ul>
+            </div>
+            <button class="clear-completed">Clear completed</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

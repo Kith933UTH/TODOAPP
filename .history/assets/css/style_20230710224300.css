@@ -1,0 +1,288 @@
+/*---------- Global ------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html {
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Poppins', sans-serif;
+}
+/* -------- Bg & Container ------- */
+.container {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../img/container_background.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    
+}
+/* ----------- TODO APP ----------- */
+.title {
+    --font-size: 10rem;
+    font-size: var(--font-size);
+    line-height: var(--font-size);
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+    margin-top: -5rem;  
+    margin-bottom: 1rem;
+    background: -webkit-linear-gradient(145deg, rgba(123,24,184,1) 1%, rgba(83,24,184,1) 51%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.todo-app {
+    backdrop-filter: blur(1.5rem);
+    width: 60rem;
+    max-height: 46rem;
+    font-size: 1.6rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px; 
+    box-shadow: 0 0 10px 1px white;
+    border-left: 0.2rem solid rgba(255, 255, 255, 0.7);
+    border-top: 0.2rem solid rgba(255, 255, 255, 0.7);
+    background: -webkit-linear-gradient(145deg, rgba(123,24,184,0.5) 1%, rgba(83,24,184,0.5) 51%, rgba(0,212,255,0.5) 100%);
+}
+
+.todo-app::before {
+    content: "";
+    opacity: 0.7;
+    position: absolute;
+    inset: -5px; /* control the spread */
+    transform: translate(24px, 30px); /* control the offsets */
+    z-index: -1; /* place the element behind */
+    background: -webkit-linear-gradient(145deg, rgba(123,24,184,0.5) 1%, rgba(83,24,184,0.5) 51%, rgba(0,212,255,0.5) 100%);
+    filter: blur(5px); /* control the blur */
+    border-radius: 2rem;
+  }
+
+/* ----------Header--------- */
+.header {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    background-color:rgba(255, 255, 255, 0.4);
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px; 
+    box-shadow: 0px -10px 18px 0px rgba(0,0,0,0.14);
+}
+
+.header .toggle-all {
+    display: none;
+}
+
+
+.toggle-all:checked + label{
+    opacity: 100%;
+}
+.toggle-all + label {
+    transform: rotateZ(90deg);
+    opacity: 50%;
+}
+.toggle-all + label::before {
+    content: "❯";
+    font-size: 22px;
+    color: rgb(230, 230, 230);
+    padding: 1rem 1.6rem;
+}
+
+.header .get-todo {
+    padding-left: 1rem;
+    flex: 1;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+    background: -webkit-linear-gradient(325deg, rgba(123,24,184,1) 1%, rgba(83,24,184,1) 51%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+.header .get-todo::placeholder {
+    opacity: 0.5;
+    background: -webkit-linear-gradient(325deg, rgba(123,24,184,1) 1%, rgba(83,24,184,1) 51%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+
+/* -------Todo list--------- */
+.todo-item {
+    height: 6.8rem;
+    padding: 1rem 1rem;
+    box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.14);
+    background: -webkit-linear-gradient(145deg, rgba(123,24,184,1) 1%, rgba(83,24,184,1) 51%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 1px 1px 1px white;
+}
+
+.todo-item.enableEditing .todo-item-view {
+    display: none;
+}
+.todo-item.enableEditing .editing {
+    display: block;
+}
+.editing {
+    display: none;
+}
+
+.todo-item .todo-item-view {    
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* -----------Completed input----------- */
+.todo-item .toggle-completed {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0.8rem;
+    border-radius: 50%;
+    border: 0.1rem solid white;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../img/moon.png);
+    background-size: contain;
+    user-select: none;
+    transition: transform .5s ease-out;
+    cursor: pointer;
+}
+
+
+.todo-item .toggle-completed::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-image: url(../img/stars.png);
+    user-select: none;
+    display: none;
+}
+
+.todo-item .toggle-completed:checked::after {
+    display: block;
+}
+
+.todo-item .toggle-completed:hover {
+    transform: scale(1.4) rotateZ(-120deg);
+}
+
+
+.todo-item .toggle-completed::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;    
+    user-select: none;
+}
+
+
+/* ----------Todo Content--------- */
+.todo-item .todo-item-wrap-content {
+    display: inline-flex;
+    flex-direction: column;
+    padding-left: 1.2rem;
+    flex: 1;
+    
+}
+.todo-item .todo-item-content {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.todo-item .todo-item-description {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ---------Todo Destroy-------- */
+.todo-item .destroy {
+    display: none;
+    height: 3rem;
+    width: 3rem;
+    font-size: 2.8rem;
+    justify-content: center;
+    align-items: center;
+    transform: rotateZ(45deg);
+    transition: transform .2s ease-out;
+    cursor: pointer;
+    user-select: none;
+}
+
+.todo-item:hover .destroy {
+    display: inline-flex;
+}
+
+.todo-item .destroy:hover {
+    transform: scale(1.3) rotateZ(45deg);
+}
+
+/* -------------Footer---------- */
+.footer {
+    border-bottom-right-radius: 5px; 
+    border-bottom-left-radius: 5px; 
+    width: 100%;
+    height: 5rem;
+    background-color:rgba(255, 255, 255, 0.4);
+}
+
+.footer .wrap-footer {
+    border-bottom-right-radius: 5px; 
+    border-bottom-left-radius: 5px; 
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 0 2rem;
+    background: -webkit-linear-gradient(145deg, rgba(123,24,184,1) 1%, rgba(83,24,184,1) 51%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    text-shadow: 1px 1px 1px white;
+}
+
+.footer .count-incomplete>span {
+    --font-size: 1.8rem;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    font-style: italic;
+    background: -webkit-linear-gradient(145deg, rgba(123,24,184,1) 1%, rgba(83,24,184,1) 51%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.footer .wrap-filters {
+    flex: 1;
+    flex-direction: row;
+}
+.footer .filters {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.footer .filter-item {
+    display: inline-block;
+    padding: 0 0.8rem;
+}
+
+.footer .filter-item.selected {
+    border: .1rem solid white;
+    background-image: linear-gradient(145deg, rgba(123,24,184,1) 1%, rgba(83,24,184,1) 51%, rgba(0,212,255,1) 100%);
+    border-radius: .4rem;
+}
+
+
+.footer .clear-completed {
+}

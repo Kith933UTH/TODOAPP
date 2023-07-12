@@ -1,0 +1,15 @@
+/* -------- Container ------- */
+.container {
+    background-image: url(../img/container_background.jpg);
+    background-position: center;
+    background-size: cover;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    filter: blur(10px);
+}
+/* ----------- TODO APP ----------- */
+.todo-app {
+
+}
